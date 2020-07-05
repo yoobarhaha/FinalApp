@@ -15,7 +15,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var goodsMin: UITextField!
     @IBOutlet var textDescription: UITextView!
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var buttonCamera: UIButton! // 카메라가 없을 경우 Disable 시키기 위함
+    @IBOutlet var buttonCamera: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
-        buttonCamera.isEnabled = false // 카메라 버튼 사용을 금지시킴
+        buttonCamera.isEnabled = false
             
         }
     }
@@ -122,14 +122,12 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             
         }
         task.resume()
-        // 이미지 파일 이름을 서버로 부터 받은 후 해당 이름을 DB에 저장하기 위해 wait()
         _ = semaphore.wait(timeout: DispatchTime.distantFuture)
         let urlString: String = "http://condi.swu.ac.kr/student/T05/GoodsComeTrue/insertFavorite.php"
         guard let requestURL = URL(string: urlString) else { return }
         request = URLRequest(url: requestURL)
         request.httpMethod = "POST"
         guard let userID = appDelegate.userName else { return }
-        print(userID)//확인
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let myDate = formatter.string(from: Date())

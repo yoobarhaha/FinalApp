@@ -10,9 +10,7 @@
         <attribute name="price" optional="YES" attributeType="String"/>
         <attribute name="userid" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="ZzimData" representedClassName="ZzimData" syncable="YES" codeGenerationType="class"/>
     <elements>
         <element name="Zzim" positionX="-18" positionY="90" width="128" height="163"/>
-        <element name="ZzimData" positionX="-9" positionY="162" width="128" height="43"/>
     </elements>
 </model>

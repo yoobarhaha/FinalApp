@@ -384,13 +384,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUI-0v-z3S">
                                 <rect key="frame" x="35" y="451" width="305" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-Ui-A6E">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-Ui-A6E">
                                         <rect key="frame" x="5" y="44.5" width="99" height="39"/>
                                         <fontDescription key="fontDescription" name="OTEnjoystoriesB" family="tvN EnjoystoriesOTF" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="welcomeLabel.png" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-S6-PSH">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="welcomeLabel.png" translatesAutoresizingMaskIntoConstraints="NO" id="sGU-S6-PSH">
                                         <rect key="frame" x="141" y="22" width="143" height="84"/>
                                     </imageView>
                                 </subviews>
@@ -490,6 +490,7 @@
                         <outlet property="loginID" destination="oXl-BU-VL6" id="DgW-aF-2vW"/>
                         <outlet property="loginPW" destination="kEs-Mi-IZV" id="XJq-RC-Qty"/>
                         <outlet property="welcomName" destination="Qad-Ui-A6E" id="dfp-1B-Jp2"/>
+                        <outlet property="welcomeText" destination="sGU-S6-PSH" id="iVk-3S-nrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GN-ga-Jlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -32,7 +32,6 @@ class DetailViewController: UIViewController {
         textDes.numberOfLines = 0
         textDes.text = GoodsData.descrip
         var imageName = GoodsData.imagename
-        // 숫자.jpg 로 저장된 파일 이름
         if (imageName != "") {
         let urlString = "http://condi.swu.ac.kr/student/T05/GoodsComeTrue/"
         imageName = urlString + imageName
@@ -86,24 +85,6 @@ class DetailViewController: UIViewController {
                     guard let receivedData = responseData else { return }
                     if let utf8Data = String(data: receivedData, encoding: .utf8) {
                         print(utf8Data)
-                        //자료삭제
-                        /*let context = self.getContext()
-                        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Zzim")
-                        var zzimArray : [NSManagedObject] = []
-                        do{
-                                   zzimArray = try context.fetch(fetchRequest)
-                                   
-                               }catch let error as NSError{
-                                   print("Could not fetch. \(error), \(error.userInfo)")
-                               }
-                            for i in 0...zzimArray.count-1 {
-                                if zzimArray[i].value(forKey: "name") as? String == self.selectedData?.name{
-                                    DispatchQueue.main.async{
-
-                                        zzimArray.remove(at: i)
-                                    }
-                                }
-                            }*/
                     }
             }
             task.resume()

@@ -13,6 +13,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var loginPW: UITextField!
     @IBOutlet var labelStatus: UILabel!
     @IBOutlet var welcomName: UILabel!
+    @IBOutlet var welcomeText: UIImageView!
     
     
     override func viewDidLoad() {
@@ -22,7 +23,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        welcomName.isHidden = true
+        welcomeText.isHidden = true
     
     }
     
@@ -88,12 +90,13 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                             DispatchQueue.main.async {
                                 self.welcomName.text=name
                                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                //appDelegate.userName = self.loginUserid.text
                                 appDelegate.userName = name
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                 let naviViewController = storyboard.instantiateViewController(withIdentifier: "MainView")
                                 naviViewController.modalPresentationStyle = .fullScreen
                                 self.present(naviViewController, animated: true, completion: nil)
+                                self.welcomeText.isHidden = false
+                                self.welcomName.isHidden = false
                             }
                         }
                     }
